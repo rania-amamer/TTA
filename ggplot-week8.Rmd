@@ -1,0 +1,54 @@
+---
+title: "HLT.Week8"
+output: html_document
+---
+
+```{r}
+###Using the ggplot in-built data sets in RStudio and the qplot function, get your creative juices flowing and create a meaningful and impactful data visualization using your preferred data set.
+
+
+# to find a toy data set
+data(package = "ggplot2")
+
+data=presidential
+
+View(presidential)
+
+```
+
+
+```{r}
+qplot(data = presidential, y = start, geom = "bar", color = party)
+
+
+```
+```{r}
+ggplot(data = presidential) +
+  geom_point(mapping = aes(x = start, y = end))
+
+
+
+
+```
+```{r}
+
+ggplot(data= presidential,aes(start,party))+geom_col()
+
+
+
+```
+```{r}
+g=ggplot(presidential, aes(party, name))
+
+g + geom_count(col="tomato3", show.legend=F) +
+  labs(
+       y="name", 
+       x="party", 
+       title="Counts Plot")
+```
+
+
+
+
+
+
